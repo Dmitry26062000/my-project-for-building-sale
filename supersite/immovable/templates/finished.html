@@ -1,0 +1,144 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Регистрация</title>
+
+    <style>
+    body {
+            background-image: url("/static/immovable/images/ЖК.jpg");
+            background-size: cover;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            background-color: rgba(255, 255, 255, 0.8); /* Полупрозрачный белый фон контейнера */
+            max-width: 400px;
+            margin: 350px auto;
+            padding: 80px 200px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 5px;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        input[type="submit"] {
+            width: 100%;
+            padding: 12px;
+            background-color: blue; /* Синий цвет кнопки */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #003366; /* Цвет кнопки при наведении */
+        }
+        .footer {
+    background-color: #333; /* Цвет фона Footer */
+    color: white; /* Цвет текста */
+    padding: 20px 0; /* Внутренние отступы вверху и внизу Footer */
+    text-align: center; /* Выравнивание текста по центру */
+    margin-top: 30%;
+}
+
+/* Стили для таблицы с информацией о компании */
+.company-info {
+    width: 100%;
+    max-width: 400px; /* Максимальная ширина таблицы */
+    margin: 0 auto; /* Центрирование таблицы на странице */
+    border-collapse: collapse; /* Схлопывание границ таблицы */
+}
+
+.company-info tr {
+    border-bottom: 1px solid #fff; /* Горизонтальные линии между строками */
+}
+
+.company-info td {
+    padding: 10px; /* Внутренние отступы для ячеек */
+}
+
+/* Стили для меток и текста в таблице */
+.info-label {
+    font-weight: bold; /* Жирный текст для меток */
+    text-align: right; /* Выравнивание текста меток по правому краю */
+    padding-right: 10px; /* Внутренние отступы для меток */
+}
+
+.info-text {
+    text-align: left; /* Выравнивание текста по левому краю */
+}
+    a{
+        margin-left:55px;
+        display:inline-block;
+    }
+    b{
+        color:blue;
+    }
+    h4{
+        display: inline-block;
+        margin-left:2px;
+    }
+    .blue{
+        margin-left: 35%;
+    }
+    .blue button{
+        color:white;
+        background-color: #0056b3;
+        padding:10px;
+        border-radius: 15px;
+        margin-bottom: 0%;
+    }
+
+</style>
+</head>
+<body>
+<script>function back(){window.location.href="/"}</script>
+    <div class="container">
+        <h2>ЖК Орион</h2>
+        <h4><b>{{first}}</b> вам отправлено письмо с подтверждением на указаную эл.почту!</h4>
+        <a href="#">{{second}}</a>
+        <div class="blue">
+        <button type="button" onclick="back();">На Главную</button>
+        </div>
+
+    </div>
+</body>
+<footer class="footer">
+        <table class="company-info">
+            <tr>
+                <td class="info-label">Адрес:</td>
+                <td class="info-text">Шоссе Энтузиастов д.1.</td>
+            </tr>
+            <tr>
+                <td class="info-label">Телефон:</td>
+                <td class="info-text">8499-999-00-00</td>
+            </tr>
+            <tr>
+                <td class="info-label">Электронная почта:</td>
+                <td class="info-text">info@orion.ru</td>
+            </tr>
+        </table>
+    </footer>
+</html>

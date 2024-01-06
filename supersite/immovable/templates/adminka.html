@@ -1,0 +1,41 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Administration page</title>
+    <link type="text/css" rel="stylesheet" href="{% static 'immovable/css/style2.css' %}">
+</head>
+<body>
+<h1 class="headerr">Страница Администрации </h1>
+<div class="image-container">
+    <a href="/emp/"><img class="enlarge-image"  data-title="Сотрудники" src="{% static 'immovable/images/emp.png' %}" alt="Изображение 1"></a>
+    </div>
+    <div class="image-container">
+        <a href="/clients/"><img class="enlarge-image" data-title="Клиенты"src="{% static 'immovable/images/client.jpg' %}" alt="Изображение 2"></a>
+    </div>
+<div class="image-container">
+    <a href="/registpg/"><img class="enlarge-image" data-title="Регистрация" src="{% static 'immovable/images/регистре.jpg' %}" alt="Изображение 1"></a>
+    </div>
+    <div class="image-container">
+        <a href="/contr/"><img class="enlarge-image"  data-title="Контракты" src="{% static 'immovable/images/contract.jpg' %}" alt="Изображение 2"></a>
+    </div>
+<script src="/static/immovable/js/valid.js">
+</script>
+</body>
+<footer class="footer">
+        <table class="company-info">
+            <tr>
+                <td class="info-label">Адрес:</td>
+                <td class="info-text">Шоссе Энтузиастов д.1.</td>
+            </tr>
+            <tr>
+                <td class="info-label">Телефон:</td>
+                <td class="info-text">8499-999-00-00</td>
+            </tr>
+            <tr>
+                <td class="info-label">Электронная почта:</td>
+                <td class="info-text">info@orion.ru</td>
+            </tr>
+        </table>
+    </footer>
+</html>

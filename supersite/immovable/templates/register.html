@@ -1,0 +1,43 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Зарегистрированные пользователи</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'immovable/css/registra.css' %}">
+</head>
+<body>
+    <div class="header">
+        <h2>Пользователи</h2>
+        <form action="" id="filter-form" class="horizontal-menu" method="get">
+            <label for="username">Имя пользователя:</label>
+            <input type="text" id="username" name="username">
+            <label for="email">Электронная почта:</label>
+            <input type="text" id="email" name="email" >
+
+
+            <input type="submit" value="Применить фильтр" onclick="er();">
+        </form>
+    </div>
+
+    <div class="content">
+        <h5 class="cout" id="countrow">Найдено записей:{{cout}}</h5>
+<div class="table-container">
+<table class="styled-table" id="tbl">
+    <thead>
+    <tr>
+    <th scope="col">Имя пользователя</th>
+    <th scope="col"> Электронная почта</th>
+    <th scope="col"> Пароль</th>
+    <th scope="col"> Роль пользователя</th>
+    </tr>
+    </thead>
+    <tbody>
+{% for i in use %}
+<tr><td><form method='get'  action='user/'><input type='submit' id="opn" value="{{i.username}}" name='unm'></form></td><td>{{i.email}}</td><td>{{i.password}}</td><td>{{i.role_id}}</td></tr>
+</tbody>
+{% endfor %}
+</table>
+    </div>
+    </div>
+</body>
+</html>

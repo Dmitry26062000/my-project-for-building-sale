@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{tit}}</title>
+    <style>
+        /* Стили для формы */
+.my-form {
+    max-width: 600px;
+    margin: 300px auto;
+    padding: 20px;
+    background-color: #f4f4f4;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Стили для меток и полей ввода */
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 25px;
+
+}
+
+input[type="text"] {
+    width: 80%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 30px;
+    margin-left: 5%;
+
+}
+
+/* Стили для кнопок */
+.my-button {
+    background-color: #007bff; /* Синий цвет фона */
+    color: white; /* Белый цвет текста */
+    padding: 10px 20px; /* Внутренний отступ */
+    border: none;
+    border-radius: 5px; /* Скругление углов */
+    cursor: pointer;
+    font-size: 20px;
+    text-align: center;
+    margin-left: 15%;
+}
+
+.my-button[type="submit"] {
+    background-color: #007bff; /* Синий цвет фона для кнопки "Отправить" */
+}
+
+.my-button[type="reset"] {
+    background-color: #dc3545; /* Красный цвет фона для кнопки "Сбросить" */
+}
+
+.my-button:hover {
+    background-color: #0056b3; /* Изменение цвета при наведении */
+}
+  .headerr{
+
+    background-size: cover; /* Заполняет всю площадь заголовка */
+    background-repeat: no-repeat; /* Не повторять фоновое изображение */
+    background-color: rgba(0, 0, 0, 0.5); /* Цвет фона с прозрачностью */
+    color: white; /* Цвет текста */
+    font-family: 'Arial', sans-serif; /* Шрифт */
+    font-size: 36px; /* Размер шрифта */
+    padding: 20px; /* Внутренние отступы для создания пространства вокруг текста */
+    text-align: center;
+         }
+         .headerr:hover {
+    background-color: rgba(0, 0, 0, 0.7); /* Изменяем цвет фона при наведении */
+    color: #fff; /* Изменяем цвет текста при наведении */
+}
+body{
+    background-color: #ffffcc;
+}
+    </style>
+</head>
+<body>
+<h1 class="headerr"> Пользователь {{tit}}</h1>
+<form class="my-form" action="#" method="get">
+    <label for="name">Имя Пользователя:</label>
+        <input type="text" id="name" name="name" value="{{tit}}" required>
+
+        <label for="email">Email:</label>
+        <input type="text" id="email" name="email" value="{{mail}}" required>
+
+        <button type="submit" class="my-button">Изменить</button>
+        <button type="reset" class="my-button">Удалить</button>
+</form>
+</body>
+</html>

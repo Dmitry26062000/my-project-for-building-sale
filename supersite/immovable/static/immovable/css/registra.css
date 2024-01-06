@@ -1,0 +1,90 @@
+/* Стили для шапки (горизонтального меню) */
+.header {
+    background-color: #007bff; /* Синий цвет фона */
+    color: white; /* Белый цвет текста */
+    padding: 20px;
+    text-align: center;
+}
+/* Стили для синего submit-кнопки */
+input[type="submit"] {
+    background: none; /* Удаление фона */
+    border: none; /* Удаление границы */
+    color: #007bff; /* Синий цвет текста */
+    padding: 10px 10px; /* Внутренний отступ */
+    cursor: pointer;
+    font-size: 16px;
+    text-align: center;
+
+}
+
+input[type="submit"]:hover {
+    text-decoration: underline; /* Добавление подчеркивания при наведении */
+    color: #0056b3; /* Изменение цвета текста при наведении */
+}
+
+
+/* Стили для формы фильтрации */
+#filter-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.horizontal-menu label,
+.horizontal-menu input,
+.horizontal-menu select,
+.horizontal-menu input[type="submit"] {
+    margin-right: 10px;
+    padding: 10px; /* Внутренний отступ для элементов формы */
+    border: 1px solid #ccc; /* Границы элементов формы */
+    border-radius: 5px; /* Скругление углов */
+}
+
+.horizontal-menu input[type="submit"] {
+    background-color: #007bff; /* Цвет фона кнопки */
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+.horizontal-menu del {
+    color:red;
+}
+
+/* Стили для контента (таблицы с результатами) */
+.content {
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Стили для таблицы */
+.table-container {
+    overflow-x: auto; /* Горизонтальная прокрутка таблицы при необходимости */
+}
+
+.styled-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.styled-table th,
+.styled-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+.styled-table th {
+    background-color: #007bff;
+    color: white;
+    font-weight: bold;
+}
+
+.styled-table tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.styled-table tbody tr:hover {
+    background-color: #d1e8ff;
+}

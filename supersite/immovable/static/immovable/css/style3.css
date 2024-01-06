@@ -1,0 +1,186 @@
+   /* Общие стили для header */
+/* Общие стили для header */
+.header {
+    background-color: rgba(192, 192, 192, 0.8); /* Светло-серый полупрозрачный фон */
+    color: #007bff; /* Цвет текста и акцентов (синий) */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+
+}
+
+/* Стили для логотипа */
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* Стили для поля поиска */
+.search-bar {
+    display: flex;
+    align-items: center;
+
+}
+
+.search-bar input[type="text"] {
+    padding: 8px;
+    border: 2px solid #ccc; /* Границы поля */
+    border-radius: 4px;
+    margin-right: 10px;
+    width: 250px;
+}
+
+/* Стили для кнопки "Найти" */
+.search-button {
+    padding: 8px;
+    background-color: #007bff;
+    color: white;
+    border: 2px solid #007bff; /* Границы кнопки */
+    border-radius: 4px;
+    cursor: pointer;
+    background-size: 30px;
+}
+
+/* Стили для навигации */
+.nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+}
+
+.nav li {
+    margin-right: 20px;
+}
+
+.nav a {
+    text-decoration: none;
+    color: #007bff;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+/* Стили для кнопок "Войти" и "Регистрация" */
+.login-button,
+.register-button {
+    padding: 8px 16px;
+    color: #007bff; /* Синий цвет текста */
+    border: 2px solid #007bff; /* Границы кнопки */
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold; /* Жирный шрифт */
+}
+
+/* Стили для кнопок при наведении */
+.login-button:hover,
+.register-button:hover {
+    background-color: transparent; /* Убираем фон при наведении */
+}
+
+/* Стили для формы фильтрации */
+.filter-form {
+    width: 625px; /* Увеличиваем ширину формы */
+    height: 450px; /* Увеличиваем высоту формы */
+    padding: 20px;
+    background-color: #007bff; /* Синий цвет фона */
+    border: 1px solid #007bff; /* Граница такого же цвета */
+    border-radius: 10px; /* Увеличиваем радиус границы для более читаемого вида */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Увеличиваем тень для более выразительного вида */
+    color: white; /* Белый цвет текста */
+}
+
+h2 {
+    text-align: center;
+}
+
+label {
+    display: block;
+    margin-bottom: 15px; /* Увеличиваем расстояние между метками */
+    font-size: 25px;
+}
+
+/* Стили для чекбоксов и их меток */
+.checkbox-group {
+    display: flex;
+    align-items: center;
+}
+
+.checkbox-group label {
+    flex: 1; /* Растягиваем метку на всю доступную ширину */
+    margin: 0; /* Убираем отступы */
+}
+
+input[type="checkbox"] {
+    margin-right: 10px; /* Расстояние между чекбоксами */
+}
+
+input[type="number"] {
+    width: 80%;
+    padding: 15px; /* Увеличиваем внутренний отступ */
+    margin-bottom: 15px; /* Увеличиваем расстояние между полями */
+    border: 1px solid #fff; /* Белая граница */
+    border-radius: 5px;
+    background-color: #007bff; /* Синий цвет поля */
+    color: white; /* Белый цвет текста */
+}
+
+/* Стили для кнопки */
+.my-button {
+    background-color: #007bff;
+    color: white;
+    padding: 15px 30px; /* Увеличиваем внутренний отступ кнопки */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px; /* Увеличиваем размер шрифта кнопки */
+    text-align: center;
+    display: block;
+    margin-left: 30%;
+}
+
+.my-button:hover {
+    background-color: #0056b3;
+}
+/* Стили для контейнера и формы */
+/* Стили для контейнера и формы */
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start; /* Выравниваем элементы контейнера сверху */
+}
+
+.filter-form {
+    width:25%;
+    padding: 20px;
+    background-color: #007bff;
+    border: 1px solid #007bff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    color: white;
+}
+
+/* Стили для таблицы */
+.property-table {
+    width:75%; /* Уменьшаем ширину таблицы */
+    padding: 20px;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.property-row {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.property-row img {
+    max-width:50%;
+    max-height:50%;
+}
+
+.property-row p {
+    margin-top: 10px;
+    margin-left: 10px;
+    font-size: 40px;
+}

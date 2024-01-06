@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Application page</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        /* Стили для фона страницы */
+        body {
+            background-image: url("/static/immovable/images/ЖК.jpg");
+            background-size: cover;
+            background-repeat: no-repeat;
+            height: 100vh; /* Установите высоту в пределах видимой части страницы */
+        }
+
+        /* Стили для формы */
+        .form-container {
+            background-color: rgba(255, 255, 255, 0.7); /* Полупрозрачный белый цвет */
+            padding: 20px;
+            border-radius: 10px;
+            margin: 200px auto;
+            max-width: 400px; /* Установите желаемую ширину формы */
+        }
+        .form-container h4{
+            margin-left: 25%;
+        }
+
+    </style>
+</head>
+<body>
+<script>function cncl(){
+    window.location.href="/";
+};</script>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-container">
+                    <h4>ЖК Орион</h4>
+                    <form method="POST" action="subdata/">
+                          {% csrf_token %}
+                        <div class="form-group">
+                            <label for="e">E-mail</label>
+                            <input type="text" class="form-control" id="e" name="efirst" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="field2">Количество комнат</label>
+                            <input type="text" class="form-control" id="field2" name="scroom" value="{{r}}" readonly>
+                        </div>
+                         <div class="form-group">
+                            <label for="field3">Площадь кв.м</label>
+                            <input type="text" class="form-control" id="field3" name="field3" value="{{a}} кв м" readonly>
+                        </div>
+                         <div class="form-group">
+                            <label for="field4">Стоимость</label>
+                            <input type="text" class="form-control" id="field4" name="p" value="{{p}} рублей" readonly>
+                        </div>
+                         <div class="form-group">
+                            <input type="hidden" class="form-control" id="field5" name="prs" value="{{ids}}" readonly>
+                        </div>
+                        <button type="submit" class="btn btn-primary" >Отправить</button>
+                        <button type="button" class="btn btn-danger ml-2" id="cancel" onclick="cncl();">Отмена</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Включаем Bootstrap JS (необходим для работы некоторых компонентов) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
+

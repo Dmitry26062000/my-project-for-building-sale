@@ -1,0 +1,49 @@
+body { /* Путь к фоновому изображению */
+            background-size: cover;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+
+        }
+
+        /* Стили для модального окна */
+        .modal {
+            background-color: white;
+            max-width: 400px;
+            padding: 40px 80px;
+            text-align: center;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        }
+	label {
+            display: block;
+            margin-bottom: 5px;
+        }
+	input[type="text"],
+        input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+
+        }
+	a {
+	font-color:red;
+	}
+
+        /* Стили для кнопки внутри модального окна */
+        .modal-button {
+            background-color: blue; /* Синий цвет кнопки */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            cursor: pointer;
+	    margin-bottom:2px;
+
+        }

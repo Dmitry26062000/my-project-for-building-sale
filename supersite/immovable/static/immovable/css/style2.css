@@ -1,0 +1,122 @@
+ body {
+            /*background-image: url("/static/immovable/images/ЖК.jpg");*/
+            background-size: cover;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+         h1{
+                 font-family: 'Arial', sans-serif; /* Замените шрифт на подходящий для вашего бренда */
+    font-size: 36px; /* Размер шрифта */
+    font-weight: bold; /* Жирный шрифт */
+    color: #333; /* Цвет текста (можете выбрать цвет, который соответствует вашей компании) */
+    text-align: center; /* Выравнивание текста по центру */
+    text-transform: uppercase; /* Преобразование текста в верхний регистр */
+    margin: 0; /* Убираем внешние отступы, чтобы заголовок был по центру по вертикали */
+    padding: 20px 0; /* Внутренние отступы для создания пространства вокруг заголовка */
+             background:burlywood;
+              background-color: rgba(0, 0, 0, 0.5);
+         }
+         .headerr{
+
+    background-size: cover; /* Заполняет всю площадь заголовка */
+    background-repeat: no-repeat; /* Не повторять фоновое изображение */
+    background-color: rgba(0, 0, 0, 0.5); /* Цвет фона с прозрачностью */
+    color: white; /* Цвет текста */
+    font-family: 'Arial', sans-serif; /* Шрифт */
+    font-size: 36px; /* Размер шрифта */
+    padding: 20px; /* Внутренние отступы для создания пространства вокруг текста */
+    text-align: center;
+         }
+         .headerr:hover {
+    background-color: rgba(0, 0, 0, 0.7); /* Изменяем цвет фона при наведении */
+    color: #fff; /* Изменяем цвет текста при наведении */
+}
+          img{
+             width: 40%;
+             margin: 40px;
+              margin-top:15%;
+
+         }
+
+            /* Стили для контейнера изображения */
+.image-container {
+    width: 600px; /* Ширина контейнера */
+    height: 550px; /* Высота контейнера */
+    overflow: hidden; /* Скрываем часть изображения, которая выходит за пределы контейнера */
+    float: left; /* Размещаем контейнеры изображений в ряд */
+    margin-right: 5px; /* Расстояние между контейнерами */
+    margin-left:20%;
+    margin-top:10px;
+
+}
+
+
+/* Стили для изображения */
+.enlarge-image {
+    width: 70%; /* Ширина изображения равна ширине контейнера */
+    height: 70%; /* Автоматическое масштабирование высоты */
+    transition: transform 0.2s; /* Анимация при наведении */
+    border-top-right-radius: 40px;
+    border-top-left-radius: 40px;
+    border-bottom-right-radius: 40px;
+    border-bottom-left-radius: 20px;
+    border:4px solid black;
+}
+
+/* Увеличение изображения при наведении */
+.enlarge-image:hover {
+    transform: scale(1.1); /* Увеличиваем размер изображения на 10% */
+}
+
+
+
+/* Стили для Footer */
+.footer {
+    background-color: #333; /* Цвет фона Footer */
+    color: white; /* Цвет текста */
+    padding: 20px 0; /* Внутренние отступы вверху и внизу Footer */
+    text-align: center; /* Выравнивание текста по центру */
+    margin-top: 50%;
+}
+
+/* Стили для таблицы с информацией о компании */
+.company-info {
+    width: 100%;
+    max-width: 400px; /* Максимальная ширина таблицы */
+    margin: 0 auto; /* Центрирование таблицы на странице */
+    border-collapse: collapse; /* Схлопывание границ таблицы */
+}
+
+.company-info tr {
+    border-bottom: 1px solid #fff; /* Горизонтальные линии между строками */
+}
+
+.company-info td {
+    padding: 10px; /* Внутренние отступы для ячеек */
+}
+
+/* Стили для меток и текста в таблице */
+.info-label {
+    font-weight: bold; /* Жирный текст для меток */
+    text-align: right; /* Выравнивание текста меток по правому краю */
+    padding-right: 10px; /* Внутренние отступы для меток */
+}
+
+.info-text {
+    text-align: left; /* Выравнивание текста по левому краю */
+}
+.logout-button{
+    /*padding: 30px 16px;*/
+    /*color: #007bff; !* Синий цвет текста *!*/
+    /*border: 2px solid #007bff; !* Границы кнопки *!*/
+    /*border-radius: 4px;*/
+    /*cursor: pointer;*/
+    /*font-weight: bold; !* Жирный шрифт *!*/
+    margin-right: 100px;
+}
+
+/* Стии для кнопок при наведении */
+.logout-button:hover{
+    background-color: transparent; /* Убираем фон при наведении */
+}

@@ -1,0 +1,63 @@
+.header {
+    background-color:deepskyblue; /* Синий фон */
+    color:white; /* Цвет текста и акцентов (синий) */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+
+}
+
+/* Стили для логотипа */
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* Стили для поля поиска */
+.search-bar {
+    display: flex;
+    align-items: center;
+
+}
+
+.search-bar input[type="text"] {
+    padding: 8px;
+    border: 2px solid #ccc; /* Границы поля */
+    border-radius: 4px;
+    margin-right: 10px;
+    width: 250px;
+}
+
+/* Стили для кнопки "Найти" */
+
+
+/* Стили для навигации */
+.nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+}
+
+.nav li {
+    margin-right: 20px;
+}
+.nav input[type='submit']{
+    text-decoration: none;
+    color: #007bff;
+    font-weight: bold;
+    transition: color 0.3s;
+    background: none;
+    border: none;
+    cursor: pointer;
+
+}
+
+.nav a {
+    text-decoration: none;
+    color: #007bff;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+/* Стили для кнопок "Войти" и "Регистрация" */

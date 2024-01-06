@@ -1,0 +1,446 @@
+{% load static%}
+<!DOCTYPE html>
+<html lang="en">
+<title>{{tit}}</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdn.flexmonster.com/demo.css">
+<script src="{% static 'immovable/js/actuser.js' %}"></script>
+<style>
+    /* Дополнительные стили, если необходимо */
+    .navbar {
+        background-color: #007bff; /* Синий цвет для меню */
+    }
+
+    button {
+        background-color: #0056b3;
+        color: white;
+        margin-bottom: 10%;
+    }
+
+    .row property-row {
+        padding: 30px;
+    }
+
+    .navbar navbar-expand-lg navbar-light a {
+        margin-right: 10%;
+    }
+
+    #menu__toggle {
+        opacity: 0;
+    }
+
+    #menu__toggle:checked + .menu__btn > span {
+        transform: rotate(45deg);
+    }
+
+    #menu__toggle:checked + .menu__btn > span::before {
+        top: 0;
+        transform: rotate(0deg);
+    }
+
+    #menu__toggle:checked + .menu__btn > span::after {
+        top: 0;
+        transform: rotate(90deg);
+    }
+
+    #menu__toggle:checked ~ .menu__box {
+        left: 0 !important;
+    }
+
+    .menu__btn {
+        position: fixed;
+        top: 20px;
+        left: 20px;
+        width: 26px;
+        height: 26px;
+        cursor: pointer;
+        z-index: 1;
+    }
+
+    .menu__btn > span,
+    .menu__btn > span::before,
+    .menu__btn > span::after {
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        background-color: white;
+        transition-duration: .25s;
+    }
+
+    .menu__btn > span::before {
+        content: '';
+        top: -8px;
+    }
+
+    .menu__btn > span::after {
+        content: '';
+        top: 8px;
+    }
+
+    .menu__box {
+        display: block;
+        position: fixed;
+        top: 0;
+        left: -100%;
+        width: 300px;
+        height: 100%;
+        margin: 0;
+        padding: 80px 0;
+        list-style: none;
+        background-color: #ECEFF1;
+        box-shadow: 2px 2px 6px rgba(0, 0, 0, .4);
+        transition-duration: .25s;
+    }
+
+    .menu__item {
+        display: block;
+        padding: 12px 24px;
+        color: #333;
+        font-family: 'Roboto', sans-serif;
+        font-size: 20px;
+        font-weight: 600;
+        text-decoration: none;
+        transition-duration: .25s;
+    }
+
+    .menu__item:hover {
+        background-color: #CFD8DC;
+    }
+
+    .hidden-tab {
+        display: none;
+    }
+
+    .toggle-button {
+        cursor: pointer;
+        background-color: #007bff;
+        color: white;
+        padding: 10px;
+        border-radius: 5px;
+    }
+
+    .hidden-table {
+        display: none;
+    }
+    .bttn {
+    background: none; /* Удаление фона */
+    border: none; /* Удаление границы */
+    color: #007bff; /* Синий цвет текста */
+    padding: 10px 10px; /* Внутренний отступ */
+    cursor: pointer;
+    font-size: 16px;
+    text-align: center;
+}
+       h1 {
+            font-family: 'Roboto', sans-serif;
+            font-weight: 700; /* Жирный шрифт */
+            font-size: 36px; /* Размер шрифта */
+        }
+
+        /* Применение шрифта к тегу p */
+        p {
+            font-family: 'Roboto', sans-serif;
+            font-weight: 400; /* Обычный шрифт */
+            font-size: 16px; /* Размер шрифта */
+        }
+        .hidden-tab .photo{
+            max-width:40px ;
+            max-height: 40px;
+        }
+        button[type='button']{
+            background-color: #42aaff;
+            color:white;
+            border:none;
+            border-radius: 2px;
+
+        }
+        .hidden-tab button[type='button']{
+            margin-right: 0;
+        }
+</style>
+</head>
+<body>
+<script src="{% static  'immovable/js/checout.js' %}"></script>
+<nav class="navbar navbar-expand-lg navbar-light">
+    <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+            <div class="dropdown">
+                <a class="nav-link text-white mr-auto dropdown-toggle" data-toggle="dropdown" href="#">{{tit}}</a>
+                <ul class="dropdown-menu">
+                    <li><a href="#">Настройки</a></li>
+                </ul>
+            </div>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link text-white mr-auto" href="/auth/" onclick="outtrue();">Выйти</a>
+        </li>
+    </ul>
+</nav>
+<div class="hamburger-menu">
+    <input id="menu__toggle" type="checkbox"/>
+    <label class="menu__btn" for="menu__toggle">
+        <span></span>
+    </label>
+
+    <ul class="menu__box">
+        <li><a class="menu__item" href="#" onclick="showTab('tab1')" >{{f}}</a></li>
+        <li><a class="menu__item" href="#" onclick="showTab('tab5')" >Главная</a></li>
+        <li><a class="menu__item" href="#" onclick="showTab('tab2')">{{d}}</a></li>
+        <li><a class="menu__item" href="#" onclick="showTab('tab2')">{{s}}</a></li>
+        <li><a class="menu__item" href="#" onclick="showTab('tab4')">{{e}}</a></li>
+        <li><a class="menu__item" href="#" onclick="showTab('tab3')">{{j}}</a></li>
+    </ul>
+</div>
+<div class="hidden-tab" id="tab1">
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="toggle-button" onclick="toggleTable('myTable1')">Контракты</div>
+                <table class="table hidden-table" id="myTable1">
+                    <thead>
+                    <tr>
+                        <th>Номер договора</th>
+                        <th>Имя пользователя</th>
+                        <th>Номер заявки</th>
+                        <th>Статус</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% if data %}
+                    {% for i in data %}
+                    <tr>
+                        <td>{{i.pk}}</td>
+                        {% for u in usr %}
+                        <td>{{u.username}}</td>
+                            {% endfor %}
+                        <td>{{i.appl_id}}</td>
+                        {% if stt %}
+                            {% for j in stt %}
+                            <td>{{j.name}}</td>
+                                {% endfor %}
+                        {% endif %}
+                        <td><input type="button" value="Печать" onclick="printDiv('tab1')"></td>
+                    </tr>
+                    {% endfor %}
+                    {% else %}
+                    <h4>У вас пока нет контрактов! Самое время приобрести недвижимость! </h4>
+                    {% endif %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="hidden-tab" id="tab2">
+    <div class="centered-form">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h2>Управляющая компания</h2>
+                    <form action="#">
+                        <div class="form-group">
+                            <label for="textInput">Ваш E-mail</label>
+                            <input type="text" class="form-control" id="textInput" value="{{em}}" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label for="textAreaInput">Обращение</label>
+                            <textarea class="form-control" id="textAreaInput" rows="3"
+                                      placeholder="Какой у вас вопрос! Так же напишите номер квартиры!"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Отправить</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="hidden-tab" id="tab3">
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="toggle-button" onclick="toggleTable('myTable2')">Заявки</div>
+                <table class="table hidden-table" id="myTable2">
+                    <thead>
+                    <tr>
+                        <th>Номер заявки</th>
+                        <th>E-mail клиента</th>
+                        <th>Номер квариты</th>
+                        <th>Договор</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for i in applicat %}
+                    <tr>
+                        <form method="GET" action="contracts/">
+                        <td>{{i.pk}}</td>
+                        <td>{{i.email}}</td>
+                            <input type="hidden" name="appmaiil" value="{{i.email}}">
+                        <td>{{i.Home_id}}</td>
+                            <input type="hidden" name="apphome" value="{{i.Home_id}}">
+                        <td><button class="bttn" name="iden" value="{{i.pk}}">Составить договор</button></td>
+                        </form>
+                    </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="hidden-tab" id="tab4">
+    <div class="container mt-4">
+        <div class="row">
+        <button type="button" class="btn_sv">Сохранить</button>
+        </div>
+        <canvas id="myChart" width="400" height="300"></canvas>
+        <div class="row">
+        <button type="button" class="btn_sv2 ">Сохранить</button>
+        </div>
+        <canvas id="myChartpr" width="400" height="300"></canvas>
+    </div>
+</div>
+<div class="hidden-tab" id="tab5" style="display: block">
+    <div class="container mt-4">
+    <h1>ЖК Орион</h1>
+    <p>Мы-московский застройщик жилого комплекса премиум класса недалько от станции метро "Авиамоторная"</p>
+    <p>Предлаагаем вам насладиться незабываемым интерьером просторных квартир с красивым видом и панорамными окнами!</p>
+            <div class="container mt-4">
+        <h1 class="text-center mb-4">Квартиры и апартаменты</h1>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card"  id="card1">
+                    <img src="{% static 'immovable/images/thrmgsjpg.jpg' %}"  class="card-img-top" alt="Фото 1" onclick="mainmenu();">
+                    <div class="card-body">
+                        <p class="card-text"></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="{% static 'immovable/images/scndmgs.jpg' %}" class="card-img-top" alt="Фото 2" onclick="mainmenu();" >
+                    <div class="card-body">
+                        <p class="card-text"></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="{% static 'immovable/images/firstmgs.jpg' %}" class="card-img-top" alt="Фото 3" onclick="mainmenu();">
+                    <div class="card-body">
+                        <p class="card-text"></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="{% static 'immovable/images/scndmgs.jpg' %}" class="card-img-top" alt="Фото 2" onclick="mainmenu();">
+                    <div class="card-body">
+                        <p class="card-text"></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="{% static 'immovable/images/thrmgsjpg.jpg' %}" class="card-img-top" alt="Фото 1" onclick="mainmenu();">
+                    <div class="card-body">
+                        <p class="card-text"></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="{% static 'immovable/images/scndmgs.jpg' %}" class="card-img-top" alt="Фото 1" onclick="mainmenu();">
+                    <div class="card-body">
+                        <p class="card-text"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <div class="container mt-2">
+        <h1 class="text-center mb-4">Социальные сети</h1>
+        <div class="row">
+            <div class="col-md-2">
+            <div class="card">
+                    <img src="{% static 'immovable/images/telegram.jpg' %}" class="card-img-top" alt="Фото 1">
+                    <div class="card-body">
+                        <p class="card-text">Телеграм-канал: <a href="#">@Orion_apart</a></p>
+                    </div>
+            </div>
+        </div>
+            <div class="col-md-2">
+            <div class="card">
+                    <img src="{% static 'immovable/images/vk.jpg' %}" class="card-img-top" alt="Фото 1">
+                    <div class="card-body">
+                        <p class="card-text">VK: <a href="#">https://vk.com/orion_apart</a></p>
+                    </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+<!-- Включаем Bootstrap JS (необходим для работы некоторых компонентов) -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.2/jspdf.min.js"></script>
+      <script>
+          const ctx = document.getElementById('myChart');
+     new Chart(ctx,{
+    type: 'bar',
+    data: {
+      labels: [{% for m in dta %},'{{m}}',{% endfor %}],
+      datasets: [{
+        label: 'Статистика договоров',
+        data: [{% for x in val %},'{{x}}',{% endfor %}],
+        borderWidth:2,
+        backgroundColor:'#FFB1C1',
+      }]
+    },
+    options: {
+        scales: {
+            y: {
+                beginAtZero: true,
+            }
+        },
+    }
+    });
+        const ctx2 = document.getElementById('myChartpr');
+     new Chart(ctx2,{
+    type: 'bar',
+    data: {
+      labels: [{% for m in datepr %},'{{m}}',{% endfor %}],
+      datasets: [{
+        label: 'Динамика продаж',
+        data: [{% for x in prices %},'{{x}}',{% endfor %}],
+        borderWidth:2,
+        backgroundColor:'#ffff00'
+      }]
+    },
+    options: {
+        scales: {
+            y: {
+                beginAtZero: true,
+            }
+        },
+    }
+    });
+const  btn=document.querySelector('.btn_sv');
+function CreatePDF(){
+    const canvas= document.getElementById('myChart');
+    const canvasImg=canvas.toDataURL('image/jpeg',1.0);
+    console.log(canvasImg);
+    let pdf=new jsPDF('landscape');
+    pdf.setFontSize(10);
+    pdf.addImage(canvasImg,'JPEG',15,15,280,150);
+    pdf.save('contracts.pdf');
+
+};
+btn.addEventListener('click',CreatePDF)
+      </script>
+</body>
+</html>
